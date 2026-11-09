@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sunzila Islam Zerin — Computer Science and Engineering student, creative content creator, and lifelong learner.">
+  <meta name="theme-color" content="#090b1c">
+  <title>Sunzila Islam Zerin | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090b1c; --panel: #11152b; --panel2: #171c39;
+      --text: #f7f7ff; --muted: #b7bfd8; --cyan: #55e4e7;
+      --pink: #ff69c8; --violet: #8c70ff; --line: rgba(255,255,255,.12);
+      --glow: 0 0 34px rgba(85,228,231,.15);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--text); font-family: "DM Sans", sans-serif;
+      background: radial-gradient(ellipse at 12% 8%, rgba(140,112,255,.19), transparent 32%),
+                  radial-gradient(ellipse at 90% 30%, rgba(33,207,165,.13), transparent 30%), var(--bg);
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    .orb { position: fixed; z-index: -1; width: 280px; height: 280px; border-radius: 50%;
+      filter: blur(90px); opacity: .16; pointer-events: none; animation: drift 12s ease-in-out infinite alternate; }
+    .orb.one { background: var(--violet); top: 15%; left: -160px; }
+    .orb.two { background: #12cda7; right: -170px; top: 58%; animation-delay: -5s; }
+    @keyframes drift { to { transform: translate(60px, -45px) scale(1.18); } }
+    .nav { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(18px);
+      background: rgba(9,11,28,.76); border-bottom: 1px solid var(--line); }
+    .nav-inner { max-width: 1120px; margin: auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+    .brand { font: 700 1.05rem "Space Grotesk"; letter-spacing: .04em; }
+    .brand span { color: var(--cyan); }
+    .nav-links { display: flex; gap: 26px; color: var(--muted); font-size: .9rem; }
+    .nav-links a:hover { color: var(--cyan); }
+    .menu-btn { display: none; border: 1px solid var(--line); color: white; background: transparent; border-radius: 10px; padding: 8px 11px; }
+    .wrap { max-width: 1120px; margin: auto; padding: 0 24px; }
+    .hero { min-height: 690px; display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 60px; padding-top: 65px; padding-bottom: 80px; }
+    .eyebrow { display: inline-flex; gap: 9px; align-items: center; color: var(--cyan); font-size: .78rem; letter-spacing: .19em; text-transform: uppercase; font-weight: 700; }
+    .eyebrow:before { content: ""; width: 28px; height: 1px; background: var(--cyan); }
+    h1 { font: 700 clamp(2.8rem, 6.4vw, 5.6rem)/.98 "Space Grotesk"; letter-spacing: -.065em; margin: 22px 0; }
+    h1 .gradient { background: linear-gradient(100deg, var(--pink), #c18cff 48%, var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero-copy { color: var(--muted); max-width: 550px; font-size: 1.08rem; line-height: 1.8; }
+    .actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; gap: 9px; padding: 13px 19px; border-radius: 12px; font-weight: 700; font-size: .9rem; transition: .25s; }
+    .btn.primary { color: #08101c; background: linear-gradient(110deg, var(--cyan), #9ff4dc); box-shadow: 0 8px 28px rgba(85,228,231,.2); }
+    .btn.secondary { border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.04); }
+    .btn:hover { transform: translateY(-4px); }
+    .portrait-wrap { position: relative; justify-self: center; width: min(340px, 82vw); aspect-ratio: 1; }
+    .portrait-wrap:before { content: ""; position: absolute; inset: -13px; border-radius: 38% 62% 55% 45% / 45% 40% 60% 55%;
+      background: linear-gradient(135deg, var(--cyan), var(--violet), var(--pink)); animation: morph 8s ease-in-out infinite alternate; }
+    @keyframes morph { to { border-radius: 58% 42% 40% 60% / 55% 60% 40% 45%; transform: rotate(7deg); } }
+    .portrait { position: relative; width: 100%; height: 100%; object-fit: cover; border-radius: 34% 66% 53% 47% / 43% 42% 58% 57%; border: 5px solid var(--bg); }
+    .float-tag { position: absolute; bottom: 12px; left: -42px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 13px; background: rgba(17,21,43,.92); box-shadow: var(--glow); font-size: .85rem; animation: bob 4s ease-in-out infinite; }
+    @keyframes bob { 50% { transform: translateY(-10px); } }
+    .socials { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin-top: 28px; }
+    .socials a { width: 150px; min-height: 42px; box-sizing: border-box; display: flex; align-items: center; justify-content: flex-start; gap: 11px; padding: 0 12px; border: 1px solid var(--line); border-radius: 12px; color: var(--text); font-size: .88rem; font-weight: 600; transition: .2s; }
+    .socials a svg { width: 22px; height: 22px; flex: 0 0 22px; display: block; }
+    .socials a:hover { border-color: var(--cyan); transform: translateX(3px); }
+    section { padding: 76px 0; }
+    .section-head { margin-bottom: 30px; }
+    .section-head h2 { font: 700 clamp(2rem, 4vw, 3rem) "Space Grotesk"; margin: 10px 0; letter-spacing: -.04em; }
+    .section-head p { color: var(--muted); max-width: 620px; line-height: 1.7; margin: 0; }
+    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 22px; }
+    .card { background: linear-gradient(145deg, rgba(23,28,57,.92), rgba(15,19,41,.88)); border: 1px solid var(--line); border-radius: 20px; padding: 28px; box-shadow: 0 18px 55px rgba(0,0,0,.16); }
+    .card h3 { font: 600 1.25rem "Space Grotesk"; margin: 0 0 12px; }
+    .card p { color: var(--muted); line-height: 1.8; margin: 0; }
+    .quote { border-left: 3px solid var(--pink); padding-left: 17px; margin-top: 23px; color: #e8d9f5; line-height: 1.7; }
+    .mini-stat { display: flex; align-items: center; gap: 15px; padding: 15px 0; border-bottom: 1px solid var(--line); }
+    .mini-stat:last-child { border: 0; }
+    .mini-stat b { color: var(--cyan); font: 700 1.45rem "Space Grotesk"; min-width: 45px; }
+    .mini-stat span { color: var(--muted); font-size: .92rem; }
+    .timeline { display: grid; grid-template-columns: repeat(3,1fr); gap: 17px; }
+    .timeline .card { position: relative; overflow: hidden; }
+    .timeline .card:before { content: ""; position: absolute; width: 100px; height: 100px; right: -35px; top: -40px; border-radius: 50%; background: var(--violet); opacity: .12; filter: blur(10px); }
+    .year { color: var(--pink); font-size: .78rem; letter-spacing: .12em; font-weight: 700; }
+    .timeline h3 { margin-top: 13px; }
+    .sub { color: var(--cyan); font-weight: 600; margin-bottom: 8px !important; }
+    .skills { display: flex; flex-wrap: wrap; gap: 11px; }
+    .chip { padding: 11px 15px; border: 1px solid rgba(85,228,231,.25); color: #d8fbff; background: rgba(85,228,231,.07); border-radius: 999px; font-size: .9rem; transition: .2s; }
+    .chip:hover { background: rgba(85,228,231,.17); transform: translateY(-3px); }
+    .projects { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .project-card { min-height: 220px; display: flex; flex-direction: column; justify-content: space-between; transition: .25s; }
+    .project-card:hover { transform: translateY(-6px); border-color: rgba(255,105,200,.45); }
+    .project-icon { font-size: 1.8rem; margin-bottom: 16px; }
+    .project-card small { color: var(--pink); letter-spacing: .12em; text-transform: uppercase; font-weight: 700; }
+    .contact { text-align: center; padding: 55px 28px; background: linear-gradient(120deg, rgba(140,112,255,.17), rgba(85,228,231,.1)); border: 1px solid var(--line); border-radius: 24px; }
+    .contact h2 { font: 700 clamp(2rem, 5vw, 3.4rem) "Space Grotesk"; margin: 12px 0; }
+    .contact p { color: var(--muted); line-height: 1.7; }
+    footer { color: #8790ad; text-align: center; padding: 30px 20px; font-size: .85rem; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; text-align: center; gap: 50px; padding-top: 70px; }
+      .hero-copy { margin: auto; } .eyebrow { justify-content: center; }
+      .actions { justify-content: center; }
+      .socials { align-items: center; }
+      .portrait-wrap { grid-row: 1; width: min(280px, 70vw); }
+      .float-tag { left: -20px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .timeline, .projects { grid-template-columns: 1fr; }
+      .nav-links { display: none; position: absolute; top: 60px; left: 12px; right: 12px; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: #11152b; flex-direction: column; gap: 18px; }
+      .nav-links.open { display: flex; } .menu-btn { display: block; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *:before, *:after { scroll-behavior: auto !important; animation: none !important; transition: none !important; } .reveal { opacity: 1; transform: none; } }
+  </style>
+</head>
+<body>
+  <div class="orb one"></div><div class="orb two"></div>
+  <header class="nav">
+    <nav class="nav-inner">
+      <a class="brand" href="#home">ZERIN<span>.</span></a>
+      <button class="menu-btn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="hero" id="home">
+        <div class="hero-content reveal">
+          <span class="eyebrow">Hello, welcome to my portfolio</span>
+          <h1>I'm Sunzila<br><span class="gradient">Islam Zerin.</span></h1>
+          <p class="hero-copy">A Computer Science and Engineering student with a creative mind, a curious spirit, and a love for turning ideas into meaningful digital experiences.</p>
+          <div class="actions">
+            <a class="btn primary" href="#projects">Explore my work <span>↗</span></a>
+            <a class="btn secondary" href="#contact">Let's connect</a>
+          </div>
+          <div class="socials" aria-label="Social links">
+            <a href="mailto:ssiizz2005@gmail.com" aria-label="Gmail">
+              <svg viewBox="0 0 48 48" role="img" aria-hidden="true"><path fill="#4285F4" d="M6 12.5A4.5 4.5 0 0 1 10.5 8H13v32H9a3 3 0 0 1-3-3z"/><path fill="#34A853" d="M35 40V8h2.5a4.5 4.5 0 0 1 4.5 4.5V37a3 3 0 0 1-3 3z"/><path fill="#EA4335" d="M6 12.5A4.5 4.5 0 0 1 13.2 9l10.8 8.4L34.8 9a4.5 4.5 0 0 1 7.2 3.5v1.2L24 27 6 13.7z"/><path fill="#C5221F" d="M6 13.7 13 19v21H9a3 3 0 0 1-3-3z"/><path fill="#FBBC04" d="M42 13.7 35 19v21h4a3 3 0 0 0 3-3z"/></svg>
+              <span>Gmail</span>
+            </a>
+            <a href="https://www.instagram.com/si_zerin?rpxt=MXJpNWFtdHV3cDdjNA==" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><defs><linearGradient id="igGradient" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FFDC80"/><stop offset=".35" stop-color="#F77737"/><stop offset=".68" stop-color="#E1306C"/><stop offset="1" stop-color="#833AB4"/></linearGradient></defs><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="url(#igGradient)" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="url(#igGradient)" stroke-width="2"/><circle cx="17.5" cy="6.8" r="1.2" fill="#E1306C"/></svg>
+              <span>Instagram</span>
+            </a>
+            <a href="https://www.facebook.com/share/1Avke7UDVL/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path fill="#0866FF" d="M24 12a12 12 0 1 0-13.875 11.85v-8.39H7.08V12h3.045V9.36c0-3.005 1.79-4.665 4.53-4.665 1.312 0 2.685.234 2.685.234v2.953h-1.512c-1.49 0-1.955.925-1.955 1.874V12h3.326l-.532 3.46h-2.794v8.39A12.002 12.002 0 0 0 24 12z"/></svg>
+              <span>Facebook</span>
+            </a>
+            <a href="https://x.com/s_i_zerin" aria-label="X" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path fill="currentColor" d="M18.9 2H22l-6.78 7.75L23.2 22h-6.25l-4.9-7.56L5.43 22H2.3l7.25-8.29L1.8 2h6.4l4.43 6.96L18.9 2zm-1.1 18h1.73L7.28 3.88H5.42z"/></svg>
+              <span>X / Twitter</span>
+            </a>
+            <a href="https://www.linkedin.com/in/sunzila-islam-zerin-4ba658281?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path fill="#0A66C2" d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52zM8.02 18.34H5.04V9.5h2.98v8.84zM6.53 8.29a1.73 1.73 0 1 1 .02-3.46 1.73 1.73 0 0 1-.02 3.46zm12.12 10.05h-2.97v-4.3c0-1.03-.02-2.35-1.43-2.35-1.44 0-1.66 1.12-1.66 2.27v4.38H9.62V9.5h2.85v1.21h.04c.4-.7 1.37-1.43 2.82-1.43 3.01 0 3.57 1.98 3.57 4.56v4.5z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+        <div class="portrait-wrap reveal">
+          <img class="portrait" src="assets/profile.jpg" alt="Portrait of Sunzila Islam Zerin">
+          <div class="float-tag">✦ Creator</div>
+        </div>
+      </section>
+
+      <section id="about" class="reveal">
+        <div class="section-head"><span class="eyebrow">A little about me</span><h2>Curious by nature.<br><span class="gradient">Creative by choice.</span></h2></div>
+        <div class="about-grid">
+          <article class="card">
+            <h3>About me</h3>
+            <p>I am adaptable, self-motivated, and eager to explore new opportunities that challenge my abilities. I enjoy learning, experimenting with creative ideas, and building skills that help me grow both personally and professionally. My interests sit at the intersection of technology and creativity.</p>
+            <div class="quote">“Stay curious, keep creating, and let every experience teach you something new.”</div>
+          </article>
+          <aside class="card">
+            <h3>What describes me</h3>
+            <div class="mini-stat"><b>01</b><span>Always learning and exploring</span></div>
+            <div class="mini-stat"><b>02</b><span>Creative content enthusiast</span></div>
+            <div class="mini-stat"><b>03</b><span>Interested in technology and design</span></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="education" class="reveal">
+        <div class="section-head"><span class="eyebrow">My academic journey</span><h2>Education</h2><p>Building a strong foundation while staying open to new challenges and discoveries.</p></div>
+        <div class="timeline">
+          <article class="card"><span class="year">2023 — PRESENT</span><h3>Bachelor of Science</h3><p class="sub">Computer Science and Engineering</p><p>Southeast University<br>Undergraduate student</p></article>
+          <article class="card"><span class="year">2023</span><h3>Higher Secondary Certificate</h3><p class="sub">HSC</p><p>Completed in 2023</p></article>
+          <article class="card"><span class="year">2020</span><h3>Secondary School Certificate</h3><p class="sub">SSC</p><p>Completed in 2020</p></article>
+        </div>
+      </section>
+
+      <section id="skills" class="reveal">
+        <div class="section-head"><span class="eyebrow">Things I enjoy doing</span><h2>Skills & interests</h2><p>A mix of creative strengths, digital skills, and interests I continue to develop.</p></div>
+        <div class="card">
+          <div class="skills">
+            <span class="chip">Creative Content Creation</span><span class="chip">Video Editing</span><span class="chip">Social Media Content</span><span class="chip">Visual Storytelling</span><span class="chip">Photography</span><span class="chip">Vlogging</span><span class="chip">Singing</span><span class="chip">Gaming</span><span class="chip">Technology</span><span class="chip">Continuous Learning</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="reveal">
+        <div class="section-head"><span class="eyebrow">A glimpse of what I create</span><h2>Creative projects</h2><p>Some areas where I explore ideas, practice storytelling, and express my creativity.</p></div>
+        <div class="projects">
+          <article class="card project-card"><div><div class="project-icon">🎬</div><small>Content creation</small><h3>Short-form video content</h3><p>Creating engaging edits and short videos for digital platforms.</p></div></article>
+          <article class="card project-card"><div><div class="project-icon">📹</div><small>Vlogging</small><h3>Mini vlog stories</h3><p>Capturing everyday moments and turning them into personal stories.</p></div></article>
+          <article class="card project-card"><div><div class="project-icon">💻</div><small>Technology</small><h3>CSE learning journey</h3><p>Exploring computer science concepts and developing technical skills.</p></div></article>
+        </div>
+      </section>
+
+      <section id="contact" class="reveal">
+        <div class="contact">
+          <span class="eyebrow">Have a question or an idea?</span>
+          <h2>Let's create something<br><span class="gradient">meaningful.</span></h2>
+          <p>I'm always open to connecting, learning, and exploring new opportunities.</p>
+          <a class="btn primary" href="mailto:ssiizz2005@gmail.com">Get in touch ↗</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>© <span id="year"></span> Sunzila Islam Zerin · Designed with curiosity and creativity.</footer>
+  <script>
+    // Reveal sections as they enter the viewport.
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Mobile navigation.
+    const menuButton = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    menuButton.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
